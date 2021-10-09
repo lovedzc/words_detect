@@ -2,11 +2,22 @@
 	"manifest_version": 2,
 	"name": "Hello World",
 	"version": "1.0.0",
-    "homepage_url": "https://www.baidu.com",
+    "homepage_url": "https://github.com/lovedzc/words_detect",
 
     "browser_action":
 	{
 		"default_title": "Hello World",
 		"default_popup": "popup.html"
-	}
+	},
+
+	"content_scripts": 
+	[
+		{
+			"matches": ["<all_urls>"],
+			"js": ["content-script.js"],
+			"css": ["content-script.css"],
+			"run_at": "document_start"
+		}
+	]
+
 }
